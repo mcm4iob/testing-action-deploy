@@ -27,6 +27,9 @@ inputs:
   github-token:
     description: "The token to use to create a GitHub release"
     required: true
+  create-release:
+    description: "Set to false to skip creating a GitHub release"
+    default: "true"
 
   sentry:
     description: "Enable Sentry releases integration"
@@ -122,6 +125,7 @@ runs:
         npm publish ${{ steps.extract_release.outputs.TAG }}
 
     - name: Create Github Release
+      if: ${{ inputs.create-release == 'true' }}
       uses: softprops/action-gh-release@v2
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
