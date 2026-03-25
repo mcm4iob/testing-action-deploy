@@ -14,6 +14,7 @@ Shared GitHub Actions for ioBroker testing workflows: Deploy step
 | `npm-token`       | The token to use to publish to npm                                                                                                                                                                   | ❌         | If npm-token is not set, trusted publishing must be activated. |
 | `tag`             | Optional tag to publish the package under. Creates GitHub release with tag v${tag} and name 'Release ${tag}'. Use with care.                                                                                                                                                                 | ❌         |                               -                                |
 | `github-token`    | The token to use to create a GitHub release                                                                                                                                                          | ✔         |                               -                                |
+| `create-release`  | Set to `'false'` to skip creating a GitHub release                                                                                                                                                   | ❌         |                            `true`                              |
 
 
 If Sentry integration is desired, the following inputs are used to configure it:
